@@ -1,8 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
-    kotlin("kapt") // For annotation processing with Kotlin
+    kotlin("kapt")
 }
 
 android {
@@ -47,7 +46,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.google.dagger:dagger-android-support:2.20")
-//    ksp("com.google.dagger:dagger-android-processor:2.20")
-    kapt("com.google.dagger:dagger-compiler:2.20")
+    implementation(libs.dagger.android.support)
+    kapt(libs.dagger.compiler)
 }
